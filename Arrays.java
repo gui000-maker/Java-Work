@@ -14,7 +14,7 @@ class ArrayTest {
   private ArrayList<String> Txt = new ArrayList<String>();
 
   public void SetUpTest() {
-    String hi = "Hello";
+    String hi = "Hello!";
     Txt.add(hi);
     sucess++;
   }
