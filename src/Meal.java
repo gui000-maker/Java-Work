@@ -2,11 +2,11 @@ import java.util.ArrayList;
 
 public class Meal {
     static void main() {
-        Menu Cardapio = new Menu();
-        Cardapio.addMeals("carne");
-        Cardapio.addMeals("lata555");
-        Cardapio.removeMeals("carne");
-        Cardapio.printMeals();
+        Menu cardapio = new Menu();
+        cardapio.addMeals("carne");
+        cardapio.addMeals("lata555");
+        cardapio.removeMeals("carne");
+        cardapio.printMeals();
     }
 }
 
