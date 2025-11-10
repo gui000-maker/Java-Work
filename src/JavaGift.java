@@ -9,8 +9,8 @@ public class JavaGift {
 }
 
 class Gift {
-    private String bookName;
-    private int kg;
+    private final String bookName;
+    private final int kg;
     
     public Gift (String bookName, int kg) {
     this.bookName = bookName;

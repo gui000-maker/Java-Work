@@ -11,7 +11,7 @@ public class PackageGift {
 }
 
 class Package {
-    private ArrayList<Gift> gifts = new ArrayList<>();
+    private final ArrayList<Gift> gifts = new ArrayList<>();
     public int totalWeight;
 
     public void addGift(Gift gift) {
