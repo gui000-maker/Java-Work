@@ -14,6 +14,21 @@ public class Room {
     }
 
     public ArrayList<Person> getPersons() {
-        return  room;
+        return room;
+    }
+
+    public Person shortest() {
+        if (isEmpty()) {
+            return null;
+        }
+        Person returnObject = room.getFirst();
+
+        // go through the list
+        for (Person psr : room) {
+            if (returnObject.getHeight() > psr.getHeight()) {
+                returnObject = psr;
+            }
+        }
+        return returnObject;
     }
 }
