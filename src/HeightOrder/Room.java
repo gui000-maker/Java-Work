@@ -1,0 +1,19 @@
+package HeightOrder;
+
+import java.util.ArrayList;
+
+public class Room {
+    private final ArrayList<Person> room = new ArrayList<>();
+
+    public void add(Person person) {
+        room.add(person);
+    }
+
+    public boolean isEmpty() {
+        return room.isEmpty();
+    }
+
+    public ArrayList<Person> getPersons() {
+        return  room;
+    }
+}
