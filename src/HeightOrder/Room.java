@@ -17,7 +17,7 @@ public class Room {
         return room;
     }
 
-    public Person shortest() {
+    public Person take() {
         if (isEmpty()) {
             return null;
         }
@@ -29,6 +29,8 @@ public class Room {
                 returnObject = psr;
             }
         }
+        room.remove(returnObject);
+
         return returnObject;
     }
 }
