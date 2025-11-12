@@ -31,7 +31,13 @@ public class TextUI {
             case "search" -> {
                 System.out.print("To be translated: ");
                 word = scanner.nextLine();
-                System.out.println(dictionary.translate(word));
+                String translate = dictionary.translate(word);
+                if (translate == null) {
+                    System.out.println("Word " + word + " was not found");
+                }
+                else {
+                    System.out.println("Translation: " + translate);
+                }
                 start();
             }
         }
