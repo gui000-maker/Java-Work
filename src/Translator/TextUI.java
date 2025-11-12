@@ -12,36 +12,36 @@ public class TextUI {
     }
 
     public void start() {
-        System.out.print("Command: ");
-        String word = scanner.nextLine();
+        while (true){
+            System.out.print("Command: ");
+            String word = scanner.nextLine();
 
-        switch (word) {
-            case "end" -> {
-                System.out.print("Bye bye!");
-                return;
-            }
-            case "add" -> {
-                System.out.print("Word: ");
-                word = scanner.nextLine();
-                System.out.println("Translation: ");
-                String translation = scanner.nextLine();
-                dictionary.add(word, translation);
-                start();
-            }
-            case "search" -> {
-                System.out.print("To be translated: ");
-                word = scanner.nextLine();
-                String translate = dictionary.translate(word);
-                if (translate == null) {
-                    System.out.println("Word " + word + " was not found");
+            switch (word) {
+                case "end" -> {
+                    System.out.print("Bye bye!");
+                    return;
                 }
-                else {
-                    System.out.println("Translation: " + translate);
+                case "add" -> {
+                    System.out.print("Word: ");
+                    word = scanner.nextLine();
+                    System.out.print("Translation: ");
+                    String translation = scanner.nextLine();
+                    dictionary.add(word, translation);
+                    continue;
                 }
-                start();
+                case "search" -> {
+                    System.out.print("To be translated: ");
+                    word = scanner.nextLine();
+                    String translate = dictionary.translate(word);
+                    if (translate == null) {
+                        System.out.println("Word " + word + " was not found");
+                    } else {
+                        System.out.println("Translation: " + translate);
+                    }
+                    continue;
+                }
             }
+            System.out.println("Unknown command");
         }
-        System.out.println("Unknown command");
-        start();
     }
 }
