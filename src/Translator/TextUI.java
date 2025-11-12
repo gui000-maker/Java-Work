@@ -15,18 +15,25 @@ public class TextUI {
         System.out.print("Command: ");
         String word = scanner.nextLine();
 
-        if (word.equals("end")) {
-            System.out.print("Bye bye!");
-            return;
-        } else if (word.equals("add")) {
-            System.out.print("Word: ");
-            word = scanner.nextLine();
-
-            System.out.println("Translation: ");
-            String translation = scanner.nextLine();
-
-            dictionary.add(word, translation);
-            start();
+        switch (word) {
+            case "end" -> {
+                System.out.print("Bye bye!");
+                return;
+            }
+            case "add" -> {
+                System.out.print("Word: ");
+                word = scanner.nextLine();
+                System.out.println("Translation: ");
+                String translation = scanner.nextLine();
+                dictionary.add(word, translation);
+                start();
+            }
+            case "search" -> {
+                System.out.print("To be translated: ");
+                word = scanner.nextLine();
+                System.out.println(dictionary.translate(word));
+                start();
+            }
         }
         System.out.println("Unknown command");
         start();
