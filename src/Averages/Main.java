@@ -1,12 +1,14 @@
 package Averages;
 
+import java.util.Scanner;
+
 public class Main {
     static void main() {
-        GradeRegister register = new GradeRegister();
-        register.addGradeBasedOnPoints(93);
-        register.addGradeBasedOnPoints(91);
-        register.addGradeBasedOnPoints(92);
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println(register.averageOfPoints());
+        GradeRegister register = new GradeRegister();
+
+        UserInterface userInterface = new UserInterface(register, scanner);
+        userInterface.start();
     }
 }
