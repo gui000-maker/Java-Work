@@ -6,8 +6,7 @@ public class Main {
         register.addGradeBasedOnPoints(93);
         register.addGradeBasedOnPoints(91);
         register.addGradeBasedOnPoints(92);
-        register.addGradeBasedOnPoints(88);
 
-        System.out.println(register.averageOfGrades());
+        System.out.println(register.averageOfPoints());
     }
 }
