@@ -21,10 +21,8 @@ public class class_test {
 }
 
 class PrintCount {
-  private int Count;
 
-  void SetCount(int CountSent) {
-    Count = CountSent;
-    System.out.println("Printed " + Count);
+    void SetCount(int CountSent) {
+        System.out.println("Printed " + CountSent);
   }
 }
