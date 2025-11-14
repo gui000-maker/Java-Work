@@ -6,7 +6,6 @@ public class class_test {
 
     System.out.println("Enter number of worlds: ");
     int iterations = scanner.nextInt();
-
     int i = 0;
 
     PrintCount one = new PrintCount();
@@ -16,10 +15,12 @@ public class class_test {
       System.out.println("Hello world!");
       i = i + 1;
     }
+
     scanner.close();
   }
-}
 
+
+}
 class PrintCount {
 
     void SetCount(int CountSent) {
