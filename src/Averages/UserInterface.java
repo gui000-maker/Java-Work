@@ -11,7 +11,7 @@ public class UserInterface {
         this.scanner = scanner;
     }
 
-    public void start() {
+  public void start() {
         readPoints();
         System.out.println();
         printGradeDistribution();
@@ -31,7 +31,6 @@ public class UserInterface {
                 System.out.println("Impossible number.");
                 continue;
             }
-
             this.register.addGradeBasedOnPoints(points);
         }
     }
