@@ -10,7 +10,7 @@ public class OOPContainers {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println(containers[0] + containers[1]);
+            System.out.println("First: " + containers[0] + "\nSecond: " + containers[1]);
 
             String input = scanner.nextLine();
             String[] parts = input.split(" ");
