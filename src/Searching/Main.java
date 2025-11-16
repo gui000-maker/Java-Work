@@ -9,9 +9,9 @@ public class Main {
 
 
     public static int linearSearch(ArrayList<Book> books, int searchedId) {
-        for (int i = 0; i < books.size(); i++) {
-            if (books.get(i).getId() == searchedId) {
-                return i;
+        for (Book book : books) {
+            if (book.getId() == searchedId) {
+                return books.indexOf(book);
             }
         }
         return -1;
