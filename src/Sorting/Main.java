@@ -45,11 +45,9 @@ public class Main {
     }
 
     public static void sort(int[] array) {
-        int smallestIndex;
-        for (int startIndex = 0; startIndex < array.length; startIndex++) {
-            smallestIndex = Main.indexOfSmallestFrom(array, startIndex);
-            Main.swap(array, startIndex, smallestIndex);
+        for (int Index = 0; Index < array.length; Index++) {
             System.out.println(Arrays.toString(array));
+            Main.swap(array, Index, Main.indexOfSmallestFrom(array, Index));
         }
     }
 }
