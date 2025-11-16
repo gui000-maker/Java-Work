@@ -7,11 +7,9 @@ public class Main {
     }
 
     public static int smallest(int[] array) {
-        int smallest = 0;
+        int smallest = array[0];
         for (int number : array) {
-            if (smallest == 0) {
-                smallest = number;
-            } else if (smallest > number) {
+            if (smallest > number) {
                 smallest = number;
             }
         }
