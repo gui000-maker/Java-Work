@@ -4,15 +4,8 @@ import java.util.Arrays;
 
 public class Main {
     static void main() {
-        int[] numbers = {3, 2, 5, 4, 8};
-
-        System.out.println(Arrays.toString(numbers));
-
-        Main.swap(numbers, 1, 0);
-        System.out.println(Arrays.toString(numbers));
-
-        Main.swap(numbers, 0, 3);
-        System.out.println(Arrays.toString(numbers));
+        int[] numbers = {8, 3, 7, 9, 1, 2, 4};
+        Main.sort(numbers);
     }
 
     public static int smallest(int[] array) {
@@ -49,5 +42,14 @@ public class Main {
         int temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
+    }
+
+    public static void sort(int[] array) {
+        int smallestIndex;
+        for (int startIndex = 0; startIndex < array.length; startIndex++) {
+            smallestIndex = Main.indexOfSmallestFrom(array, startIndex);
+            Main.swap(array, startIndex, smallestIndex);
+            System.out.println(Arrays.toString(array));
+        }
     }
 }
