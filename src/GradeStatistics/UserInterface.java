@@ -23,7 +23,11 @@ public class UserInterface {
                 break;
             } else {
                 int points = Integer.parseInt(input);
-                statistics.addGrade(points);
+                if (points < 0 || points > 100) {
+                    continue;
+                } else {
+                    statistics.addGrade(points);
+                }
             }
         }
     }
