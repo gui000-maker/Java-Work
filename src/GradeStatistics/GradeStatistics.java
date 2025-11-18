@@ -14,11 +14,24 @@ public class GradeStatistics {
     }
 
     public void printAverages() {
-        System.out.println("Point average (all): " + calculateAverage() + "\n"
-                        + "Point average (passing): " + calculateAveragePassing());
+        System.out.println("Point average (all): " + Average() + "\n"
+                + "Point average (passing): " + AveragePassing()
+                + "\nPass percentage: " + PassPercentage() + "\n");
     }
 
-    private String calculateAveragePassing() {
+    private String PassPercentage() {
+        int passingCount = 0;
+
+        for (int grade : this.statistics) {
+            if (grade >= 50) {
+                passingCount++;
+            }
+        }
+
+        return String.valueOf((100.0 * passingCount) / this.statistics.size());
+    }
+
+    private String AveragePassing() {
         double sum = 0;
         int passingCount = 0;
 
@@ -36,7 +49,7 @@ public class GradeStatistics {
         }
     }
 
-    private String calculateAverage() {
+    private String Average() {
         double sum = 0;
 
         for (int grade : this.statistics) {
