@@ -3,9 +3,10 @@ package GradeStatistics;
 import java.util.ArrayList;
 
 public class GradeStatistics {
+
     private final ArrayList<Integer> statistics;
 
-    public GradeStatistics () {
+    public GradeStatistics() {
         this.statistics = new ArrayList<>();
     }
 
@@ -17,7 +18,6 @@ public class GradeStatistics {
         System.out.println(
                 "Point average (all): " + calculateAverage() + "\n"
                         + "Point average (passing): " + calculateAveragePassing());
-
     }
 
     private String calculateAveragePassing() {
