@@ -3,14 +3,13 @@ package GradeStatistics;
 import java.util.Scanner;
 
 public class UserInterface {
-    GradeStatistics statistics;
-    Scanner scanner;
+    private final GradeStatistics statistics;
+    private final Scanner scanner;
 
     public UserInterface(GradeStatistics statistics, Scanner scanner) {
         this.statistics = statistics;
         this.scanner = scanner;
     }
-
 
     public void start() {
         System.out.println("Enter point totals, -1 stops:");
@@ -21,14 +20,14 @@ public class UserInterface {
             if (input.equals("-1")) {
                 statistics.printAverages();
                 break;
-            } else {
-                int points = Integer.parseInt(input);
-                if (points < 0 || points > 100) {
-                    continue;
-                } else {
-                    statistics.addGrade(points);
-                }
             }
+
+            int points = Integer.parseInt(input);
+            if (points < 0 || points > 100) {
+                continue;
+            }
+
+            statistics.addGrade(points);
         }
     }
 }
