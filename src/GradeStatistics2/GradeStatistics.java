@@ -15,8 +15,8 @@ public class GradeStatistics {
 
     public void printAverages() {
         System.out.println("Point average (all): " + Average() + "\n"
-                + "Point average (passing): " + AveragePassing()
-                + "\nPass percentage: " + PassPercentage() + "\n"
+                + "Point average (passing): " + AveragePassing() + "\n"
+                + "Pass percentage: " + PassPercentage() + "\n"
                 + "Grade distribution:" + GradeDistribution() + "\n");
     }
 
