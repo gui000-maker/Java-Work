@@ -15,6 +15,7 @@ public class GradeStatistics {
 
     public void printAverages() {
         Average();
+        AveragePassing();
         PassPercentage();
         GradeDistribution();
     }
@@ -38,6 +39,7 @@ public class GradeStatistics {
             }
         }
 
+        System.out.println("Grade distribution:");
         for (int i = 5; i >= 0; i--) {
             System.out.print(i + ": ");
             for (; gradeCounts[i] > 0; gradeCounts[i] -= 1) {
@@ -56,7 +58,7 @@ public class GradeStatistics {
             }
         }
 
-        System.out.println("Pass percentage: " + (100.0 * passingCount) / this.statistics.size());
+        System.out.printf("Pass percentage: %.1f\n", (100.0 * passingCount) / this.statistics.size());
     }
 
     private void AveragePassing() {
@@ -73,7 +75,7 @@ public class GradeStatistics {
         if (passingCount == 0) {
             System.out.println("Point average (passing): -");
         } else {
-            System.out.println("Point average (passing): " + (sum / passingCount));
+            System.out.printf("Point average (passing): %.1f\n", (sum / passingCount));
         }
     }
 
@@ -84,6 +86,6 @@ public class GradeStatistics {
             sum += grade;
         }
 
-        System.out.println("Point average (all):" + (sum / this.statistics.size()));
+        System.out.printf("Point average (all): %.1f\n", (sum / this.statistics.size()));
     }
 }
