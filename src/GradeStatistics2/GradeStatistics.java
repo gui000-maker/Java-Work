@@ -42,9 +42,7 @@ public class GradeStatistics {
 
         for (int i = 5; i >= 0; i--) {
             GradeDistribution.append(i).append(": ");
-            for (; gradeCounts[i] >= 0; gradeCounts[i] -= 1) {
-                GradeDistribution.append("*");
-            }
+            GradeDistribution.append("*".repeat(gradeCounts[i]));
             GradeDistribution.append("\n");
         }
 
@@ -52,6 +50,9 @@ public class GradeStatistics {
     }
 
     private String PassPercentage() {
+        if (this.statistics.isEmpty()) {
+            return "-";
+        }
         int passingCount = 0;
 
         for (int grade : this.statistics) {
@@ -60,7 +61,7 @@ public class GradeStatistics {
             }
         }
 
-        return String.valueOf((100.0 * passingCount) / this.statistics.size());
+        return String.format("%.1f", (100.0 * passingCount) / this.statistics.size());
     }
 
     private String AveragePassing() {
@@ -77,17 +78,20 @@ public class GradeStatistics {
         if (passingCount == 0) {
             return "-";
         } else {
-            return String.valueOf(sum / passingCount);
+            return String.format("%.1f", sum / passingCount);
         }
     }
 
     private String Average() {
+        if (this.statistics.isEmpty()) {
+            return "-";
+        }
         double sum = 0;
 
         for (int grade : this.statistics) {
             sum += grade;
         }
 
-        return String.valueOf(sum / this.statistics.size());
+        return String.format("%.1f", sum / this.statistics.size());
     }
 }
