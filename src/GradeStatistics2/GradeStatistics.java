@@ -1,4 +1,4 @@
-package GradeStatistics;
+package GradeStatistics2;
 
 import java.util.ArrayList;
 
@@ -14,13 +14,15 @@ public class GradeStatistics {
     }
 
     public void printAverages() {
-        Average();
-        PassPercentage();
-        GradeDistribution();
+        System.out.println("Point average (all): " + Average() + "\n"
+                + "Point average (passing): " + AveragePassing()
+                + "\nPass percentage: " + PassPercentage() + "\n"
+                + "Grade distribution:" + GradeDistribution() + "\n");
     }
 
-    private void GradeDistribution() {
+    private String GradeDistribution() {
         int[] gradeCounts = new int[6];
+        StringBuilder GradeDistribution = new StringBuilder();
 
         for (int grade : this.statistics) {
             if (grade < 50) {
@@ -39,15 +41,17 @@ public class GradeStatistics {
         }
 
         for (int i = 5; i >= 0; i--) {
-            System.out.print(i + ": ");
-            for (; gradeCounts[i] > 0; gradeCounts[i] -= 1) {
-                System.out.print("*");
+            GradeDistribution.append(i).append(": ");
+            for (; gradeCounts[i] >= 0; gradeCounts[i] -= 1) {
+                GradeDistribution.append("*");
             }
-            System.out.println();
+            GradeDistribution.append("\n");
         }
+
+        return GradeDistribution.toString();
     }
 
-    private void PassPercentage() {
+    private String PassPercentage() {
         int passingCount = 0;
 
         for (int grade : this.statistics) {
@@ -56,10 +60,10 @@ public class GradeStatistics {
             }
         }
 
-        System.out.println("Pass percentage: " + (100.0 * passingCount) / this.statistics.size());
+        return String.valueOf((100.0 * passingCount) / this.statistics.size());
     }
 
-    private void AveragePassing() {
+    private String AveragePassing() {
         double sum = 0;
         int passingCount = 0;
 
@@ -71,19 +75,19 @@ public class GradeStatistics {
         }
 
         if (passingCount == 0) {
-            System.out.println("Point average (passing): -");
+            return "-";
         } else {
-            System.out.println("Point average (passing): " + (sum / passingCount));
+            return String.valueOf(sum / passingCount);
         }
     }
 
-    private void Average() {
+    private String Average() {
         double sum = 0;
 
         for (int grade : this.statistics) {
             sum += grade;
         }
 
-        System.out.println("Point average (all):" + (sum / this.statistics.size()));
+        return String.valueOf(sum / this.statistics.size());
     }
 }
