@@ -10,7 +10,6 @@ public class Main {
         InputStream input = Main.class.getResourceAsStream("recipes.txt");
         Scanner scanFile = new Scanner(input);
 
-
         UserInterface ui = new UserInterface(recipeBook, scanner ,scanFile);
         ui.start();
     }
