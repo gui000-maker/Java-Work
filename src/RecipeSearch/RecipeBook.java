@@ -38,7 +38,7 @@ public class RecipeBook {
 
     public void printRecipes() {
         for (Recipe recipe : this.recipes) {
-            System.out.println(recipe.name + ", cooking time: " + recipe.time);
+            System.out.println(recipe.printName() + ", cooking time: " + recipe.printTime());
         }
     }
 }
