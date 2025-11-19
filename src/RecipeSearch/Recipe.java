@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Recipe {
     private String name;
     private int time;
-    private final ArrayList<String> ingredients = new ArrayList<>();
+     ArrayList<String> ingredients = new ArrayList<>();
 
     public void addName(String name) {
         this.name = name;
@@ -25,5 +25,9 @@ public class Recipe {
 
     public int getTime() {
         return this.time;
+    }
+
+    public ArrayList<String> getIngredients() {
+        return this.ingredients;
     }
 }

@@ -22,7 +22,9 @@ public class UserInterface {
                 Commands:
                 list - lists the recipes
                 stop - stops the program
-                find name - searches recipes by name""");
+                find name - searches recipes by name
+                find cooking time - searches recipes by cooking time
+                find ingredient - searches recipes by ingredient""");
 
         while (true) {
             System.out.print("Enter command: ");
@@ -30,7 +32,6 @@ public class UserInterface {
 
             switch (input) {
                 case "list":
-                    System.out.println("Recipes:");
                     recipeBook.printRecipes();
                     break;
                 case "stop":
@@ -38,8 +39,17 @@ public class UserInterface {
                     case "find name":
                     System.out.print("Searched word: ");
                     String searchedWord = scanner.nextLine();
-                    System.out.println("Recipes:");
                     recipeBook.searchByName(searchedWord);
+                    break;
+                case "find cooking time":
+                    System.out.print("Max cooking time: ");
+                    int maxTime = Integer.parseInt(scanner.nextLine());
+                    recipeBook.searchByCookingTime(maxTime);
+                    break;
+                case "find ingredient":
+                    System.out.print("Ingredient: ");
+                    String ingredient = scanner.nextLine();
+                    recipeBook.searchByIngredient(ingredient);
                     break;
                 default:
                     System.out.println("Unknown command");
