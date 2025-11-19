@@ -14,12 +14,15 @@ public class UserInterface {
     }
 
     public void start() {
+        recipeBook.loadRecipes(scanFile);
+
         System.out.println("""
                 File to read: recipes.txt
                 
                 Commands:
                 list - lists the recipes
-                stop - stops the program""");
+                stop - stops the program
+                find name - searches recipes by name""");
 
         while (true) {
             System.out.print("Enter command: ");
@@ -28,15 +31,19 @@ public class UserInterface {
             switch (input) {
                 case "list":
                     System.out.println("Recipes:");
-                    recipeBook.loadRecipes(scanFile);
                     recipeBook.printRecipes();
                     break;
                 case "stop":
                     return;
+                    case "find name":
+                    System.out.print("Searched word: ");
+                    String searchedWord = scanner.nextLine();
+                    System.out.println("Recipes:");
+                    recipeBook.searchByName(searchedWord);
+                    break;
                 default:
                     System.out.println("Unknown command");
             }
-
         }
     }
 }

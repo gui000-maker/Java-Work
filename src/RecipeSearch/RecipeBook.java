@@ -38,7 +38,15 @@ public class RecipeBook {
 
     public void printRecipes() {
         for (Recipe recipe : this.recipes) {
-            System.out.println(recipe.printName() + ", cooking time: " + recipe.printTime());
+            System.out.println(recipe.getName() + ", cooking time: " + recipe.getTime());
+        }
+    }
+
+    public void searchByName(String searchedWord) {
+        for (Recipe recipe : this.recipes) {
+            if (recipe.getName().contains(searchedWord.toLowerCase())) {
+                System.out.println(recipe.getName() + ", cooking time: " + recipe.getTime());
+            }
         }
     }
 }

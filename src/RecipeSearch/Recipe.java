@@ -19,11 +19,11 @@ public class Recipe {
         this.ingredients.add(ingredient);
     }
 
-    public String printName() {
+    public String getName() {
         return this.name;
     }
 
-    public int printTime() {
+    public int getTime() {
         return this.time;
     }
 }
