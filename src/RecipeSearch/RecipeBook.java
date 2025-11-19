@@ -41,6 +41,7 @@ public class RecipeBook {
         for (Recipe recipe : this.recipes) {
             System.out.println(recipe.getName() + ", cooking time: " + recipe.getTime());
         }
+        System.out.println();
     }
 
     public void searchByName(String searchedWord) {
@@ -50,6 +51,7 @@ public class RecipeBook {
                 System.out.println(recipe.getName() + ", cooking time: " + recipe.getTime());
             }
         }
+        System.out.println();
     }
 
     public void searchByCookingTime(int maxTime) {
@@ -59,13 +61,14 @@ public class RecipeBook {
                 System.out.println(recipe.getName() + ", cooking time: " + recipe.getTime());
             }
         }
+        System.out.println();
     }
 
     public void searchByIngredient(String ingredient) {
         System.out.println("Recipes:");
         for (Recipe recipe : this.recipes) {
             if (recipe.ingredients.contains(ingredient)) {
-                System.out.println(recipe.getName() + ", cooking time: " + recipe.getTime());
+                System.out.print(recipe.getName() + ", cooking time: " + recipe.getTime());
             }
         }
     }

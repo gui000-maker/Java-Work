@@ -24,7 +24,8 @@ public class UserInterface {
                 stop - stops the program
                 find name - searches recipes by name
                 find cooking time - searches recipes by cooking time
-                find ingredient - searches recipes by ingredient""");
+                find ingredient - searches recipes by ingredient
+                """);
 
         while (true) {
             System.out.print("Enter command: ");
