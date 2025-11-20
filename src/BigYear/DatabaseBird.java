@@ -57,13 +57,11 @@ public class DatabaseBird {
             int biggestIndex = i;
 
             for (int j = i + 1; j < birds.size(); j++) {
-                int obsJ = Integer.parseInt(birds.get(j).getObservations());
-                int obsBiggest = Integer.parseInt(birds.get(biggestIndex).getObservations());
-
-                if (obsJ > obsBiggest) {
+                if (Integer.parseInt(birds.get(j).getObservations()) > Integer.parseInt(birds.get(biggestIndex).getObservations())) {
                     biggestIndex = j;
                 }
             }
+
             Bird temp = birds.get(i);
             birds.set(i, birds.get(biggestIndex));
             birds.set(biggestIndex, temp);
