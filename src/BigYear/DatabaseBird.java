@@ -53,17 +53,20 @@ public class DatabaseBird {
     }
 
     public void sortByObservations() {
-        int biggestIndex = 0;
         for (int i = 0; i < birds.size() - 1; i++) {
-            for (int j = 0; j < birds.size() - 1; j++) {
-                if (Integer.parseInt(birds.get(j).getObservations()) > Integer.parseInt(birds.get(biggestIndex).getObservations())) {
-                    System.out.println(birds.get(j).getObservations());
+            int biggestIndex = i;
+
+            for (int j = i + 1; j < birds.size(); j++) {
+                int obsJ = Integer.parseInt(birds.get(j).getObservations());
+                int obsBiggest = Integer.parseInt(birds.get(biggestIndex).getObservations());
+
+                if (obsJ > obsBiggest) {
                     biggestIndex = j;
                 }
-                Bird temp = birds.get(i);
-                birds.set(i, birds.get(biggestIndex));
-                birds.set(biggestIndex, temp);
             }
+            Bird temp = birds.get(i);
+            birds.set(i, birds.get(biggestIndex));
+            birds.set(biggestIndex, temp);
         }
     }
 }
