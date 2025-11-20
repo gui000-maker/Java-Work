@@ -37,8 +37,8 @@ public class DatabaseBird {
     }
 
     public void printAll() {
-        for (int i = (birds.size() - 1); i >= 0; i--) {
-            Bird bird = birds.get(i);
+        sortByObservations();
+        for (Bird bird : birds) {
             System.out.println(bird.getName() + " (" + bird.getLatinName() + "): " + bird.getObservations() + " observations");
         }
     }
@@ -49,6 +49,21 @@ public class DatabaseBird {
             System.out.println(bird.getName() + " (" + bird.getLatinName() + "): " + bird.getObservations() + " observations");
         } else {
             System.out.println("Not a bird!");
+        }
+    }
+
+    public void sortByObservations() {
+        int biggestIndex = 0;
+        for (int i = 0; i < birds.size() - 1; i++) {
+            for (int j = 0; j < birds.size() - 1; j++) {
+                if (Integer.parseInt(birds.get(j).getObservations()) > Integer.parseInt(birds.get(biggestIndex).getObservations())) {
+                    System.out.println(birds.get(j).getObservations());
+                    biggestIndex = j;
+                }
+                Bird temp = birds.get(i);
+                birds.set(i, birds.get(biggestIndex));
+                birds.set(biggestIndex, temp);
+            }
         }
     }
 }
