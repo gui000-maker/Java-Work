@@ -37,7 +37,8 @@ public class DatabaseBird {
     }
 
     public void printAll() {
-        for (Bird bird : birds) {
+        for (int i = (birds.size() - 1); i >= 0; i--) {
+            Bird bird = birds.get(i);
             System.out.println(bird.getName() + " (" + bird.getLatinName() + "): " + bird.getObservations() + " observations");
         }
     }
