@@ -16,6 +16,6 @@ public class IOU {
     }
 
     public double howMuchDoIOweTo(String toWhom) {
-        return debts.get(toWhom);
+        return debts.getOrDefault(toWhom, 0.0);
     }
 }
