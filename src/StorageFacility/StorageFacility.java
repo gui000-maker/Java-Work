@@ -28,12 +28,17 @@ public class StorageFacility {
     }
 
     public void remove(String storageUnit, String item) {
-        if (!this.storage.containsKey(storageUnit))
+        if (!this.storage.containsKey(storageUnit)) {
             return;
+        } else {
+            this.storage.get(storageUnit).remove(item);
+            if (this.storage.get(storageUnit).isEmpty()) {
+                this.storage.remove(storageUnit);
+            }
+        }
     }
-    else
 
-    {
-
+    public ArrayList<String> storageUnits() {
+        return new ArrayList<>(this.storage.keySet());
     }
 }
