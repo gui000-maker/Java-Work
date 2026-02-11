@@ -3,8 +3,8 @@ package PersonSub;
 public class Student extends Person {
     private int credits;
 
-    public Student (String item, String local) {
-        super(item, local);
+    public Student (String name, String local) {
+        super(name, local);
     }
 
     public void study() {
@@ -13,5 +13,10 @@ public class Student extends Person {
 
     public int credits() {
         return this.credits;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\n  Study credits " + credits;
     }
 }
