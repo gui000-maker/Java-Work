@@ -2,7 +2,7 @@ package DifferentKindsOfBoxes;
 
 public class Main {
     static void main() {
-        OneItemBox box = new OneItemBox();
+        MisplacingBox box = new MisplacingBox();
         box.add(new Item("Saludo", 5));
         box.add(new Item("Pirkka", 5));
 
