@@ -2,7 +2,7 @@ package InterfaceInBox;
 
 import java.util.ArrayList;
 
-public class Box {
+public class Box implements Packable {
     private final ArrayList<Packable> items = new ArrayList<>();
     private final double maxWeight;
 
