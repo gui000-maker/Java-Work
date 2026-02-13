@@ -1,9 +1,9 @@
 package InterfaceInBox;
 
 public class Book implements Packable {
-    private String author;
-    private String name;
-    private double weight;
+    private final String author;
+    private final String name;
+    private final double weight;
 
     public Book(String author, String name, double weight) {
         this.author = author;

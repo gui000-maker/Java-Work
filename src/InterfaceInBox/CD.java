@@ -1,9 +1,9 @@
 package InterfaceInBox;
 
 public class CD implements Packable {
-    private String artist;
-    private String name;
-    private int publishYear;
+    private final String artist;
+    private final String name;
+    private final int publishYear;
 
     public CD(String artist, String name, int publishYear) {
         this.artist = artist;
