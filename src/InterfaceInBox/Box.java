@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class Box {
     private final ArrayList<Packable> items = new ArrayList<>();
     private final double maxWeight;
-    private double currentWeight = 0;
 
     public Box (double maxWeight) {
         this.maxWeight = maxWeight;
@@ -17,11 +16,20 @@ public class Box {
         }
 
         this.items.add(item);
-        currentWeight += item.weight();
+    }
+
+    public double weight() {
+        double weight = 0;
+
+        for (Packable item : this.items) {
+            weight += item.weight();
+        }
+
+        return weight;
     }
 
     @Override
     public String toString() {
-        return "Box: " + this.items.size() + " items, total weight " + this.currentWeight + " kg";
+        return "Box: " + this.items.size() + " items, total weight " + weight() + " kg";
     }
 }
