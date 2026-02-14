@@ -1,6 +1,7 @@
 package OnlineShop;
 
 import java.util.Map;
+import java.util.Set;
 
 public class Warehouse {
     private final Map<String, Integer> productsPrices = new java.util.HashMap<>();
@@ -32,5 +33,9 @@ public class Warehouse {
 
         productsStock.put(product, productsStock.get(product) - 1);
         return true;
+    }
+
+    public Set<String> products() {
+        return productsPrices.keySet();
     }
 }
