@@ -30,11 +30,13 @@ public class Store {
             }
                 if (warehouse.take(product)) {
                 cart.add(product, warehouse.price(product));
+                } else {
+                    System.out.println("product " + product + " is not available");
                 }
+        }
 
             System.out.println("your shoppingcart contents:");
             cart.print();
             System.out.println("total: " + cart.price());
-        }
     }
 }
