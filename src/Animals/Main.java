@@ -2,11 +2,12 @@ package Animals;
 
 public class Main {
     static void main() {
-        Cat cat = new Cat();
-        cat.purr();
-        cat.eat();
+        NoiseCapable dog = new Dog();
+        dog.makeNoise();
 
-        Cat garfield = new Cat("Garfield");
-        garfield.purr();
+        NoiseCapable cat = new Cat("Garfield");
+        cat.makeNoise();
+        Cat c = (Cat) cat;
+        c.purr();
     }
 }

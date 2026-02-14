@@ -1,6 +1,6 @@
 package Animals;
 
-public class Cat extends Animal {
+public class Cat extends Animal implements NoiseCapable {
 
     public Cat (String name) {
         super(name);
@@ -13,4 +13,9 @@ public class Cat extends Animal {
      void purr() {
         System.out.println(getName() + " purrs");
      }
+
+    @Override
+    public void makeNoise() {
+        purr();
+    }
 }
